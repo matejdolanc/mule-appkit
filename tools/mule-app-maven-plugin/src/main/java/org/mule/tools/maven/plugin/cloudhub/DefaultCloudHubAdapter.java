@@ -29,7 +29,6 @@ public class DefaultCloudHubAdapter implements CloudHubAdapter {
 	private DomainConnection connectionDomain;
 
 	public DefaultCloudHubAdapter() {
-		System.out.println("DefaultCloudHubAdapter");
 	}
 
 	@Override
@@ -37,16 +36,12 @@ public class DefaultCloudHubAdapter implements CloudHubAdapter {
 		// connectionDomain = new
 		// CloudHubConnectionImpl(cloudHubUrl,username,password,null,
 		// false).connectWithDomain(domain);
-		
-		System.out.println("cloudHubUrl = "+cloudHubUrl+" username = "+username+" password = "+password+" domain = "+domain+" environment = "+environment);
-		
+				
 		connectionDomain = new Connection(cloudHubUrl, username, password,environment).on(domain);
 	}
 
 	@Override
 	public void deploy(File file, String muleVersion, int workers, long maxWaitTime, Map<String, String> properties) {
-
-		System.out.println("file = "+file+" muleVersion = "+muleVersion+" workers = "+workers+" maxWaitTime = "+maxWaitTime+" properties = "+properties);
 		
 		// Application app = getApplication(muleVersion, workers, properties);
 		//
