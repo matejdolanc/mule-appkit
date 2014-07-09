@@ -31,7 +31,12 @@ public abstract class AbstractCloudHubMojo extends AbstractMojo {
      * @required
      */
     protected String cloudHubUrl;
-
+        
+    /**
+     * @parameter expression="${cloudhub.environment}"
+     */
+    protected String environment;
+    
     /**
      * @parameter expression="${cloudhub.domain}"
      * @required
@@ -97,7 +102,7 @@ public abstract class AbstractCloudHubMojo extends AbstractMojo {
     }
 
     protected CloudHubAdapter createDomainConnection() throws MojoExecutionException {
-        cloudHubAdapter.create(this.cloudHubUrl, getUsername(), getPassword(), this.domain);
+        cloudHubAdapter.create(this.cloudHubUrl, getUsername(), getPassword(), this.domain,this.environment);
         return cloudHubAdapter;
     }
 

@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public interface CloudHubAdapter {
 
-    void create(String cloudHubUrl, String username, String password, String domain);
+    void create(String cloudHubUrl, String username, String password, String domain,String environment);
 
     void deploy(File file, String muleVersion, int workers, long maxWaitTime, Map<String,String> properties);
 
