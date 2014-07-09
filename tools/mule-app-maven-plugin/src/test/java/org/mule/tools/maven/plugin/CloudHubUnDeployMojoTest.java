@@ -21,8 +21,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mule.tools.maven.plugin.cloudhub.CloudHubAdapter;
 
-import com.mulesoft.cloudhub.client.CloudHubConnectionI;
-import com.mulesoft.cloudhub.client.CloudHubDomainConnectionI;
+import com.mulesoft.cloudhub.client.Connection;
+import com.mulesoft.cloudhub.client.DomainConnection;
+
 
 public class CloudHubUnDeployMojoTest {
 
@@ -33,11 +34,11 @@ public class CloudHubUnDeployMojoTest {
 
         mojo = new CloudHubUnDeployMojo();
 
-        CloudHubConnectionI connection = mock(CloudHubConnectionI.class);
+        Connection connection = mock(Connection.class);
 
-        CloudHubDomainConnectionI domainConnection = mock(CloudHubDomainConnectionI.class);
+        DomainConnection domainConnection = mock(DomainConnection.class);
 
-        when(connection.connectWithDomain(any(String.class))).thenReturn(domainConnection);
+//        when(connection.connectWithDomain(any(String.class))).thenReturn(domainConnection);
 
         String cloudHubUrl = "https://cloudhub.io/";
 

@@ -29,8 +29,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mule.tools.maven.plugin.cloudhub.CloudHubAdapter;
 
-import com.mulesoft.cloudhub.client.CloudHubConnectionI;
-import com.mulesoft.cloudhub.client.CloudHubDomainConnectionI;
+import com.mulesoft.cloudhub.client.Connection;
+import com.mulesoft.cloudhub.client.DomainConnection;
 
 @RunWith(JUnit4.class)
 public class CloudHubDeployMojoTest {
@@ -42,11 +42,11 @@ public class CloudHubDeployMojoTest {
 
         mojo = new ArtifactCloudHubDeployMojo();
 
-        CloudHubConnectionI connection = mock(CloudHubConnectionI.class);
+        Connection connection = mock(Connection.class);
 
-        CloudHubDomainConnectionI domainConnection = mock(CloudHubDomainConnectionI.class);
+        DomainConnection domainConnection = mock(DomainConnection.class);
 
-        when(connection.connectWithDomain(any(String.class))).thenReturn(domainConnection);
+//        when(connection.connectWithDomain(any(String.class))).thenReturn(domainConnection);
 
         MavenProject project = mock(MavenProject.class);
 
